@@ -1,0 +1,16 @@
+# Function of the prtogram: 
+#   A user inputs an integer number 'n' which is greater than or   equal to 0, the program should then output the maximum square number 'm' lower than or equal to n.
+q = 0
+
+n = input("Input a number ")
+n = int(n) # Turns user string input into integer.
+
+# while loop keeps increasing q until q*q is greater than n
+while (n >= q*q):
+    q = q + 1
+
+# As soon as the while loop is broken it means that the previous square number was lower than or equal to n therefore q must be reduced by one
+q = q - 1
+
+print('The largest square number smaller than the one given is:')
+print(q*q)
