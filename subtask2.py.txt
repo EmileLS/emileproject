@@ -1,0 +1,45 @@
+# Function of the program:
+#   Ask user for a sequence of numbers until the user enters '-1' the program should then output:
+#       n - the amount of numbers entered before -1 was entered
+#       s - the sum of all the numbers before -1
+#       m - smallest number in the sequence
+#       a - the mean of all numbers before -1
+n = 0
+s = 0
+a = 0
+
+# The first entry weither it be '-1' or not will be the minimum value in the sequence to start with.
+x = input("Input a number ")
+x = int(x) # Turns user string input into integer.
+m = x
+
+# The while loop keeps increasing the sum and number count accordingly until the user inputs '-1'
+while(x != -1):
+    
+    n = n + 1
+    s = s + x
+    
+    # Each time the user enters a number other than '-1' it is check if it is the lowest entry
+    if(x < m):
+        m = x
+    
+    x = input("Input a number ")
+    x = int(x) # Turns user string input into integer.
+
+# If n = 0 that mean the first and only entry was '-1'
+if(n == 0):
+    a = -1
+    m = -1
+    s = -1
+    
+else:
+    a = s/n
+
+print('The average of your sequence is: ')
+print(a)
+print('The number of entries was: ')
+print(n)
+print('The sum of your sequence was: ')
+print(s)
+print('The minimum number you entered was: ')
+print(m)
